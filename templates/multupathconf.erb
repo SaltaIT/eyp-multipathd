@@ -1,0 +1,9 @@
+defaults {
+	user_friendly_names <%= scope.function_bool2yesno([@user_friendly_names]) %>
+}
+
+blacklist {
+        <%- [@blacklist].flatten.each do |item| -%>
+        devnode "<%= item %>"
+        <%- end -%>
+}

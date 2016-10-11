@@ -9,6 +9,12 @@ class multipathd(
                             $manage_docker_service = true,
                             $service_ensure        = 'running',
                             $service_enable        = true,
+                            $user_friendly_names   = true,
+                            $blacklist             =  [
+                                                        '^(asm|ram|raw|loop|fd|md|dm-|sr|scd|st)[0-9]*',
+                                                        '^hd[a-z]',
+                                                        '^cciss*',
+                                                        ],
                           ) inherits multipathd::params{
 
   class { '::multipathd::install': } ->
