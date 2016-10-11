@@ -16,7 +16,7 @@ class multipathd::config inherits multipathd {
   concat::fragment { 'base multipathcobnf':
     target  => '/etc/multipath.conf',
     order   => '00',
-    content => template("${module_name}/multipathdconf.erb")
+    content => template("${module_name}/multipathconf.erb")
   }
 
 }
