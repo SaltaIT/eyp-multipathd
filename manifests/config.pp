@@ -22,13 +22,13 @@ class multipathd::config inherits multipathd {
   concat::fragment { 'alias begin':
     target  => '/etc/multipath.conf',
     order   => '10',
-    content => 'multipaths {',
+    content => "\nmultipaths {\n",
   }
 
   concat::fragment { 'alias end':
     target  => '/etc/multipath.conf',
     order   => '19',
-    content => '}',
+    content => "\n}\n",
   }
 
 }
