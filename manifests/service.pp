@@ -15,7 +15,10 @@ class multipathd::service inherits multipathd {
   {
     if($multipathd::manage_service)
     {
-      #service or exec here
+      service { 'multipathd':
+        ensure => $service_ensure,
+        enable => $service_enable,
+      }
     }
   }
 }
