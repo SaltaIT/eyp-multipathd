@@ -6,10 +6,9 @@ class multipathd::install inherits multipathd {
 
   if($multipathd::manage_package)
   {
-    # package here, for example: 
-    #package { $multipathd::params::package_name:
-    #  ensure => $multipathd::package_ensure,
-    #}
+    package { $multipathd::params::package_name:
+      ensure => $multipathd::package_ensure,
+    }
   }
 
 }

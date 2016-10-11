@@ -1,5 +1,7 @@
 class multipathd::params {
 
+  $package_name = 'device-mapper-multipath'
+
   case $::osfamily
   {
     'redhat':
