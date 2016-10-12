@@ -1,6 +1,9 @@
 class multipathd::service inherits multipathd {
 
-  #
+  Exec {
+    path => '/bin:/sbin:/usr/bin:/usr/sbin',
+  }
+
   validate_bool($multipathd::manage_docker_service)
   validate_bool($multipathd::manage_service)
   validate_bool($multipathd::service_enable)
@@ -18,6 +21,12 @@ class multipathd::service inherits multipathd {
       service { 'multipathd':
         ensure => $service_ensure,
         enable => $service_enable,
+      }
+
+      exec { 'enable multupath DM driver':
+        command => '/sbin/mpathconf --enable',
+        onlyif  => 'multipath -v3 | grep "DM multipath kernel driver not loaded"',
+        before  => Service['multipathd'],
       }
     }
   }
