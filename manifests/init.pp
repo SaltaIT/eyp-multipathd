@@ -13,6 +13,7 @@ class multipathd(
                             $blacklist             =  [
                                                         '^(asm|ram|raw|loop|fd|md|dm-|sr|scd|st)[0-9]*',
                                                         '^hd[a-z]',
+                                                        '^xvd[a-z]',
                                                         '^cciss*',
                                                         ],
                           ) inherits multipathd::params{
