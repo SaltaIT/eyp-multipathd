@@ -2,7 +2,7 @@
   "name": "eyp-multipathd",
   "version": "0.1.5",
   "author": "eyp",
-  "summary": null,
+  "summary": "multipathd management",
   "license": "Apache-2.0",
   "source": "https://github.com/NTTCom-MS/eyp-multipathd",
   "project_page": null,
