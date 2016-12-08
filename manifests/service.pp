@@ -19,8 +19,8 @@ class multipathd::service inherits multipathd {
     if($multipathd::manage_service)
     {
       service { 'multipathd':
-        ensure => $service_ensure,
-        enable => $service_enable,
+        ensure => $multipathd::service_ensure,
+        enable => $multipathd::service_enable,
       }
 
       exec { 'enable multupath DM driver':
