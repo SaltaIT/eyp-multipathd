@@ -25,5 +25,5 @@
 #        }
 # }
 define multipathd::blacklist() {
-  
+  # TODO
 }
